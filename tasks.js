@@ -52,28 +52,70 @@ document.addEventListener("DOMContentLoaded", function () {
             // If any of the fields are empty, display an alert
             alert("Please fill out all fields (Username, Password, and Email).");
         } else {
-            // If all assertions are met:
+
+            // // Use AJAX to check if the username and email exist
+            // $.ajax({
+            //     type: "POST", // Use "POST" request
+            //     url: "http://localhost/taskq.php", // Replace with your PHP script URL
+            //     data: {
+            //         action: "checkUserAndEmail", // Add a custom action to check username and email
+            //         username: username,
+            //         email: email
+            //     },
+            //     success: function (response) {
+            //         // Handle the response from the PHP script
+            //         if (response.existsUsername) {
+            //             alert("Username already exists. Please choose another.");
+            //         } else if (response.existsEmail) {
+            //             alert("Email already exists. Please use a different email.");
+            //         } else {
+            //             // If both username and email don't exist, proceed to insert the user
+            //             $.ajax({
+            //                 type: "POST", // Use "POST" request
+            //                 url: "http://localhost/taskq.php", // Replace with your PHP script URL
+            //                 data: {
+            //                     action: "insertUser", // Add a custom action to insert the user
+            //                     username: username,
+            //                     password: password,
+            //                     email: email
+            //                 },
+            //                 success: function (insertResponse) {
+            //                     // Handle the response from the user insertion
+            //                     if (insertResponse.success) {
+            //                         // User insertion successful
+            //                         alert("Registration successful. You can now log in.");
+            //                         // Optionally, you can redirect to a login page or perform other actions.
+            //                     } else {
+            //                         alert("Error inserting user. Please try again later.");
+            //                     }
+            //                 },
+            //                 error: function (error) {
+            //                     // Handle errors, if any
+            //                     console.error(error);
+            //                 }
+            //             });
+            //         }
+            //     },
+            //     error: function (error) {
+            //         // Handle errors, if any
+            //         console.error(error);
+            //     }
+            // });
+
             // Hide the Submit and Go Back buttons
             submitButton.style.display = "none";
             goBackButton.style.display = "none";
 
-            // Show the Logout button
-            logoutButton.style.display = "block";
+            // Show the Register and Login buttons
+            registerButton.style.display = "block";
+            loginButton.style.display = "block";
 
-            // Hide the Email and Password text fields
+            // Hide the Email text input field
             emailField.style.display = "none";
-            passwordField.style.display = "none";
-
-            // Keep the Username Value in the Username Field
-            // Disable the Username field so that it cannot be overwritten
-            usernameInput.value = username;
-            usernameInput.disabled = true;
-
-            // Show the Tasks List 
-            tasksList.style.display = "block";
-            taskMsg.style.display = "none";
         }
     });
+
+    
 
     // Define the Login function
     loginButton.addEventListener("click", function () {
@@ -141,4 +183,5 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Assertion failed: usernameInput must be disabled and not empty.");
         }
     });
+    
 });
