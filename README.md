@@ -16,5 +16,6 @@
 - [Documentation](#documentation)
 - [Demo](#demo)
 
-### Summary:
+#project-description
+#Summary
  Our project is a web-app that allows specific users to create a to-do-list to sort a given list of tasks. 
