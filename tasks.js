@@ -59,54 +59,54 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Please fill out all fields (Username, Password, and Email).");
         } else {
 
-            // // Use AJAX to check if the username and email exist
-            // $.ajax({
-            //     type: "POST", // Use "POST" request
-            //     url: "http://localhost/taskq.php", // Replace with your PHP script URL
-            //     data: {
-            //         action: "checkUserAndEmail", // Add a custom action to check username and email
-            //         username: username,
-            //         email: email
-            //     },
-            //     success: function (response) {
-            //         // Handle the response from the PHP script
-            //         if (response.existsUsername) {
-            //             alert("Username already exists. Please choose another.");
-            //         } else if (response.existsEmail) {
-            //             alert("Email already exists. Please use a different email.");
-            //         } else {
-            //             // If both username and email don't exist, proceed to insert the user
-            //             $.ajax({
-            //                 type: "POST", // Use "POST" request
-            //                 url: "http://localhost/taskq.php", // Replace with your PHP script URL
-            //                 data: {
-            //                     action: "insertUser", // Add a custom action to insert the user
-            //                     username: username,
-            //                     password: password,
-            //                     email: email
-            //                 },
-            //                 success: function (insertResponse) {
-            //                     // Handle the response from the user insertion
-            //                     if (insertResponse.success) {
-            //                         // User insertion successful
-            //                         alert("Registration successful. You can now log in.");
-            //                         // Optionally, you can redirect to a login page or perform other actions.
-            //                     } else {
-            //                         alert("Error inserting user. Please try again later.");
-            //                     }
-            //                 },
-            //                 error: function (error) {
-            //                     // Handle errors, if any
-            //                     console.error(error);
-            //                 }
-            //             });
-            //         }
-            //     },
-            //     error: function (error) {
-            //         // Handle errors, if any
-            //         console.error(error);
-            //     }
-            // });
+            // Use AJAX to check if the username and email exist
+            $.ajax({
+                type: "POST", // Use "POST" request
+                url: "http://localhost/taskq.php", // Replace with your PHP script URL
+                data: {
+                    action: "checkUserAndEmail", // Add a custom action to check username and email
+                    username: username,
+                    email: email
+                },
+                success: function (response) {
+                    // Handle the response from the PHP script
+                    if (response.existsUsername) {
+                        alert("Username already exists. Please choose another.");
+                    } else if (response.existsEmail) {
+                        alert("Email already exists. Please use a different email.");
+                    } else {
+                        // If both username and email don't exist, proceed to insert the user
+                        $.ajax({
+                            type: "POST", // Use "POST" request
+                            url: "http://localhost/taskq.php", // Replace with your PHP script URL
+                            data: {
+                                action: "insertUser", // Add a custom action to insert the user
+                                username: username,
+                                password: password,
+                                email: email
+                            },
+                            success: function (insertResponse) {
+                                // Handle the response from the user insertion
+                                if (insertResponse.success) {
+                                    // User insertion successful
+                                    alert("Registration successful. You can now log in.");
+                                    // Optionally, you can redirect to a login page or perform other actions.
+                                } else {
+                                    alert("Error inserting user. Please try again later.");
+                                }
+                            },
+                            error: function (error) {
+                                // Handle errors, if any
+                                console.error(error);
+                            }
+                        });
+                    }
+                },
+                error: function (error) {
+                    // Handle errors, if any
+                    console.error(error);
+                }
+            });
 
             // Hide the Submit and Go Back buttons
             submitButton.style.display = "none";
