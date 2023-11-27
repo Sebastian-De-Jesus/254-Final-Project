@@ -29,7 +29,7 @@ The configuration for this _web-app_ is as follows. Utilizing _php & sql_ we are
 
 # license
 
-For styling we have used the **_7.css MIT_** license. This helped us achive the older aesthetic.
+For styling we have used the **_7.css_** style sheet, which is protected under the **_MIT_** license. This helped us achive the older aesthetic.
 
 # demo
 
