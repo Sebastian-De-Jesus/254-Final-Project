@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>cs254 Project</title>
+        <link rel="stylesheet" href="https://unpkg.com/7.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style>
+            body {
+                background: #fff555;
+                background-image: url(win7wp.jpg);
+                background-size: auto;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="mt-4 col mx-auto">
+                    <div class="window active" style="max-width: 300px">
+                        <div class="title-bar">
+                            <div class="title-bar-text">User Information</div>
+                            <div class="title-bar-controls">
+                                <button aria-label="Minimize"></button>
+                                <button aria-label="Maximize"></button>
+                                <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body has-space">
+                            <div class="field-row">
+                                <label for="username">Username:</label>
+                                <input id="username" type="text" />
+                            </div>
+                            <div class="field-row">
+                                <label for="password">Password:</label>
+                                <input id="password" type="text" />
+                            </div>
+                            <div class="field-row" style="display:none">
+                                <label for="email">E-Mail:</label>
+                                <input id="email" type="text" />
+                            </div>
+                            <div class="field-row justify-content-end">
+                                <button id="login">Login</button>
+                                <button id="register">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="mt-4 col-6 mx-auto">
+                    <div class="window active" style="max-width: 600px">
+                        <div class="title-bar">
+                            <div class="title-bar-text">To-Do List</div>
+                            <div class="title-bar-controls">
+                                <button aria-label="Minimize"></button>
+                                <button aria-label="Maximize"></button>
+                                <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body has-space">
+                            <div class="field-row">
+                                <input checked type="checkbox" id="task1">
+                                <label for="task1">Task 1</label>
+                            </div>
+                            <div class="field-row">
+                                <input checked type="checkbox" id="task2">
+                                <label for="task2">Task 2</label>
+                            </div>
+                            <div class="field-row">
+                                <input checked type="checkbox" id="task3">
+                                <label for="task3">Task 3</label>
+                            </div>
+                            <div class="field-row">
+                                <input checked type="checkbox" id="task4">
+                                <label for="task4">Task 4</label>
+                            </div>
+                            <div class="field-row justify-content-end">
+                                <button id="insert">Insert Task</button>
+                                <button id="delete">Delete Task</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html> 
