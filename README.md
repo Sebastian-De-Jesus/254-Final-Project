@@ -7,7 +7,7 @@
 
 ## Table of Contents
 
-- [Project Summary](#project-description)
+- [Project Description](#project-description)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
@@ -16,6 +16,10 @@
 - [Documentation](#documentation)
 - [Demo](#demo)
 
-#project-description
-#Summary
- Our project is a web-app that allows specific users to create a to-do-list to sort a given list of tasks. 
+# project-description
+
+ Our project is a _web-app_ that allows specific users to create a to-do-list to sort a given list of tasks. By hosting this application on the web multiple individual are able to contribute in doing tasks aswell as assigning task. With further development this could potential be utilized in a small office enviorment. Currently we have it running on a local host, due to the cost of hosting this item online.
+
+# installation
+
+In order to install this web-app you must first download the files from the **github repository**.
