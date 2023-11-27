@@ -5,11 +5,11 @@ function connectToDatabase() {
     // Replace with your database connection details
     $host = "localhost"; // Database host
     $username = "your_db_username"; // Database username
-    $password = "your_db_password"; // Database password
+    $passwd = "your_db_passwd"; // Database passwd
     $database = "your_db_name"; // Database name
 
     // Create a database connection
-    $connection = mysqli_connect($host, $username, $password, $database);
+    $connection = mysqli_connect($host, $username, $passwd, $database);
 
     // Check if the connection was successful
     if (!$connection) {
@@ -20,12 +20,12 @@ function connectToDatabase() {
 }
 
 // Insert a User into the Database
-function insertUser($username, $password, $email) {
+function insertUser($username, $passwd, $email) {
     // Connect to the database
     $connection = connectToDatabase();
 
     // SQL query to insert the user data into the Users table
-    $sql = "INSERT INTO Users (Username, Password, Email) VALUES ('$username', '$password', '$email')";
+    $sql = "INSERT INTO Users (Username, Passwd, Email) VALUES ('$username', '$passwd', '$email')";
 
     // Execute the query
     if (mysqli_query($connection, $sql)) {
@@ -125,13 +125,13 @@ function checkUserAndEmail($username, $email) {
     return !empty($usernameRow) || !empty($emailRow);
 }
 
-// Asserts a Username and Password of a User
-function verifyUser($username, $password) {
+// Asserts a Username and passwd of a User
+function verifyUser($username, $passwd) {
     // Connect to the database
     $connection = connectToDatabase();
 
-    // SQL query to retrieve the user's stored password
-    $sql = "SELECT Password FROM Users WHERE Username = '$username'";
+    // SQL query to retrieve the user's stored passwd
+    $sql = "SELECT passwd FROM Users WHERE Username = '$username'";
 
     // Execute the query
     $result = mysqli_query($connection, $sql);
@@ -147,8 +147,8 @@ function verifyUser($username, $password) {
     mysqli_free_result($result);
     mysqli_close($connection);
 
-    // Check if a row was found and if the provided password matches the stored password
-    if (!empty($row) && password_verify($password, $row["Password"])) {
+    // Check if a row was found and if the provided passwd matches the stored passwd
+    if (!empty($row) && password_verify($passwd, $row["passwd"])) {
         return true;
     }
 

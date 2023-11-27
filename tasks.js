@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             data: {
                                 action: "insertUser", // Add a custom action to insert the user
                                 username: username,
-                                password: password,
+                                passwd: password,
                                 email: email
                             },
                             success: function (insertResponse) {
