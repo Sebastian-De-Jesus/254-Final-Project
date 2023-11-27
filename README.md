@@ -11,9 +11,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
-- [Contributing](#contributing)
 - [License](#license)
-- [Documentation](#documentation)
 - [Demo](#demo)
 
 # project-description
@@ -23,3 +21,13 @@
 # installation
 
 In order to install this web-app you must first download the files from the **github repository**.
+After doing so you will need to install a few additionally tools to run the appliaction. 
+
+# configuration
+
+The configuration for this _web-app_ is as follows. Utilizing _php & sql_ we are able to create a backend that saves individual user information. This information is used in order to identify specific <sup> Task List </sup>. Additionally as mentioned in the **_installation_** section, there are specific tools that must be set up prior to use on a local machine. 
+
+# license
+
+For styling we have used the **_7.css MIT_** license. This helped us achive the older aesthetic.
+
