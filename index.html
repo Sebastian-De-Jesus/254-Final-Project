@@ -14,12 +14,32 @@
             body {
                 background: #fff555;
                 background-image: url(win7wp.jpg);
-                background-size: auto;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center center;
             }
+
+            .popUpWindow  {
+                top: 10em;
+            }
+
+            .popUp {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 25%;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+                z-index: 9999; /* Ensure it's on top */
+            }
+            
         </style>
         
     </head>
     <body>
+        <!-- User Information Container-->
         <div class="container">
             <div class="row">
                 <div class="mt-4 col mx-auto">
@@ -57,6 +77,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- To-Do List Container-->
         <div class="container">
             <div class="row">
                 <div class="mt-4 col-6 mx-auto">
@@ -73,7 +95,7 @@
                             <p id="taskMsg" style="display:block">There are No Active Tasks.. :/</p>
                             <div id="taskEntries" style="display:none">
                                 <div class="field-row">
-                                    <input checked type="checkbox" id="task1">
+                                    <input type="checkbox" id="task1">
                                     <label for="task1">Task 1</label>
                                 </div>
                                 <div class="field-row">
@@ -81,16 +103,40 @@
                                     <label for="task2">Task 2</label>
                                 </div>
                                 <div class="field-row">
-                                    <input checked type="checkbox" id="task3">
+                                    <input checked disabled type="checkbox" id="task3">
                                     <label for="task3">Task 3</label>
-                                </div>
-                                <div class="field-row">
-                                    <input checked type="checkbox" id="task4">
-                                    <label for="task4">Task 4</label>
                                 </div>
                                 <div class="field-row justify-content-end">
                                     <button id="insert">Insert Task</button>
                                     <button id="complete">Complete Task</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insert Task Pop-Up Container-->
+        <div class="centered popUp container" style="display:none" id="popUp">
+            <div class="row">
+                <div class="col-4 mx-auto">
+                    <div class="background">
+                        <div class="popUpWindow window glass active" style="max-width: 300px;">
+                            <div class="title-bar">
+                                <div class="title-bar-text">Inserting Task</div>
+                                <div class="title-bar-controls">
+                                    <button aria-label="Minimize"></button>
+                                    <button aria-label="Close" id="popUpClose"></button>
+                                </div>
+                            </div>
+                            <div class="window-body has-space">
+                                <p>Please... Name Your Task!</p>
+                                <div class="field-row">
+                                    <input id="taskName" type="text" style="width:100%" />
+                                </div>
+                                <div class="field-row justify-content-end">
+                                    <button id="taskAdd">I Did It!</button>
                                 </div>
                             </div>
                         </div>

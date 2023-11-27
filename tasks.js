@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const taskMsg = document.getElementById("taskMsg");
     const emailField = document.getElementById("emailField");
     const passwordField = document.getElementById("passwordField");
+    const taskNameInput = document.getElementById("taskName");
+    const popUpContainer = document.getElementById("popUp");
+    const popUpCloseButton = document.getElementById("popUpClose");
+    const taskEntriesContainer = document.getElementById("taskEntries");
+    const taskAddButton = document.getElementById("taskAdd");
+    const insertButton = document.getElementById("insert");
 
     // Add a click event listener to the "Go Back" button
     goBackButton.addEventListener("click", function () {
@@ -115,8 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    
-
     // Define the Login function
     loginButton.addEventListener("click", function () {
         // Check if there is a username amd password are typed out
@@ -184,4 +188,57 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     
+    // Add a click event listener to the "popUpClose" button
+    popUpCloseButton.addEventListener("click", function () {
+        // Clear any value stored in "taskName" input
+        taskNameInput.value = "";
+
+        // Hide the "popUp" container by setting its display property to "none"
+        popUpContainer.style.display = "none";
+    });
+
+    // Add a click event listener to the "taskAdd" button
+    taskAddButton.addEventListener("click", function () {
+        // Get the value of the "taskName" input
+        const taskName = taskNameInput.value.trim();
+
+        // Check if the "taskName" input is not empty
+        if (taskName !== "") {
+            // Create a new task element with the specified format
+            const newTaskElement = document.createElement("div");
+            newTaskElement.classList.add("field-row");
+            newTaskElement.innerHTML = `
+                <input type="checkbox" id="${taskName}">
+                <label for="${taskName}">${taskName}</label>
+            `;
+
+            // Add the newly-created task to the top of the "taskEntries" container
+            taskEntriesContainer.insertBefore(newTaskElement, taskEntriesContainer.firstChild);
+
+            // Clear the "taskName" input
+            taskNameInput.value = "";
+
+            // Hide the PopUp Container
+            popUpContainer.style.display = "none";
+
+        } else {
+            // Display an alert if the "taskName" input is empty
+            alert("Please enter a task name.");
+        }
+    });
+
+    // Add a click event listener to the "insert" button
+    insertButton.addEventListener("click", function () {
+        // Clear the text stored in "taskName"
+        taskNameInput.value = "";
+
+        // Set the "popUp" container to display:block
+        popUpContainer.style.display = "block";
+    });
+
+    // Stop Propagation on Popup
+    popUpContainer.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+
 });
