@@ -21,7 +21,7 @@
 # installation
 
 In order to install this web-app you must first download the files from the **github repository**.
-After doing so you will need to install a few additionally tools to run the appliaction. 
+After doing so you will need to install a few additionall tools to locally host the site and database. For our project, we went with MySQL and Apache. 
 
 # configuration
 
