@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const taskEntriesContainer = document.getElementById("taskEntries");
     const taskAddButton = document.getElementById("taskAdd");
     const insertButton = document.getElementById("insert");
+    const completeButton = document.getElementById("complete");
 
     // Add a click event listener to the "Go Back" button
     goBackButton.addEventListener("click", function () {
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Hide the Email text input field
         emailInput.style.display = "none";
+        emailField.style.display = "none";
     });
 
     // Add a click event listener to the Register button
@@ -234,6 +236,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Set the "popUp" container to display:block
         popUpContainer.style.display = "block";
+    });
+
+    // Add a click event listener to the "complete" button 
+    completeButton.addEventListener("click", function () {
+        // Get all the tasks in the "taskEntries" container
+        const tasks = taskEntriesContainer.children;
+
+        // Iterate through each task
+        for (let i = 0; i < tasks.length; i++) {
+            // Get the task element
+            const task = tasks[i];
+
+            // Check if the task is checked
+            if (task.children[0].checked) {
+                // Make the task "check disabled"
+                task.children[0].disabled = true;
+            }
+        }
     });
 
     // Stop Propagation on Popup
